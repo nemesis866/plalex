@@ -1,0 +1,214 @@
+/************************************************
+Hoja de estilos principal
+
+Proyecto: Codeando.org
+Author: Paulo Andrade
+Email: source.compu@gmail.com
+Web: http://www.pauloandrade1.com
+************************************************/
+
+/************************************************
+OPCIONES GENERALES
+************************************************/
+
+@font-face {
+    font-family: 'VarelaRound';
+    src: url('/fonts/VarelaRound-Regular.ttf') format("truetype");
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a
+{
+	color: #DDA02C;
+	text-decoration: none;
+	transition: all 0.25s ease;
+}
+a:hover
+{
+	color: #222;
+	text-decoration: none;
+}
+body
+{
+	color: #414141;
+	font-family: 'VarelaRound', helvetica, arial;
+	font-size: 16px;
+	line-height: 1.4;
+	background-color: #fcfcfc;
+}
+html
+{
+	height: 100%;
+	box-sizing: border-box;
+}
+
+#wrapper
+{
+	background-color: #fcfcfc;
+	margin: 0 auto;
+	max-width: 1100px;
+	padding: 20px 10px;
+	position: relative;
+}
+.block
+{
+	display: block !important;
+	margin: 0 auto;
+}
+.cargando
+{
+	text-align: center;
+}
+.center
+{
+	text-align: center;
+}
+.error
+{
+	background-color: #F37A43;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: bold;
+	left: 0;
+	padding: 10px 0;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	transform: translatey(-60px);
+	transition: all 0.25s ease;
+	z-index: 999;
+}
+.inlineBlock
+{
+	display: inline-block !important;
+}
+.left
+{
+	text-align: left;
+}
+.none
+{
+	display: none !important;
+}
+.success
+{
+	background-color: green;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 1.1em;
+	font-weight: bold;
+	transform: translatey(-60px);
+	.margin-top: -60px;
+	transition-duration: .25s;
+	z-index: 999;
+}
+.center
+{
+	text-align: center;
+}
+.right
+{
+	text-align: right;
+}
+
+/*********************************************************
+Configuracion header y nav
+*********************************************************/
+
+/*********************************************************
+Configuracion Footer
+*********************************************************/
+
+/*********************************************************
+Configuracion resaltador de sintaxis
+*********************************************************/
+
+.code
+{
+	background: #272822;
+	color: #ccc;
+	padding: 5px 10px;
+	border-radius: 3px;
+	overflow-x: auto;
+	font-size: 16px;
+}
+.code span
+{
+	float:none !important;
+}
+/* atributos html */
+.atn
+{
+	color: #7FE22E !important;
+}
+/* strings */
+.atv, .str
+{
+	color: #E6DB74 !important;
+}
+/* comentarios */
+.com
+{
+	color: #75715E !important;
+}
+.dec
+{
+	color: white !important;
+}
+/* palabras claves */
+.kwd
+{
+	color: #66D9EF !important;
+}
+/* numeros */
+.lit
+{
+	color: #8481FF !important;
+}
+/* operadores */
+.pun
+{
+	color: #fff !important;
+}
+.prettyprint
+{
+	background: #272822 !important;
+}
+/* etiquetas html */
+.tag
+{
+	color: #F92672 !important;
+}
+.typ
+{
+	color: #66D9EF !important;
+}
+
+/****************************************************************
+MEDIA QUERYS
+****************************************************************/
+
+@media (min-width: 300px) and (max-width: 480px){
+
+}
+@media (min-width: 481px) and (max-width: 750px){
+
+}
+@media (min-width: 751px) and (max-width: 950px){
+
+}
