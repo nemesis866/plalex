@@ -88,7 +88,7 @@ gulp.task('scripts', function() {
 gulp.task('server', function (){
 	connect.server({
 		root: './app',
-		port: 3000,
+		port: 3100,
 		livereload: true,
 		middleware: function (connect, opt){
 			return [historyApiFallback({})];

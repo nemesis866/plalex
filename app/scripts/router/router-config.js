@@ -10,7 +10,7 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function config ($routeProvider, $locationProvider, FacebookProvider)
+	function config ($routeProvider, $locationProvider)
 	{
 		// Configuración de las rutas de la APP
 		$routeProvider
@@ -27,12 +27,9 @@ Web: http://www.pauloandrade1.com
 		if(window.history && window.history.pushState) {
 	       $locationProvider.html5Mode(true);
 		}
-
-		// Configuramos la API de facebook
-		//FacebookProvider.init('346247455575774');
 	}
 
 	angular
 		.module('app')
-			.config(['$routeProvider', '$locationProvider', 'FacebookProvider', config]);
+			.config(['$routeProvider', '$locationProvider', config]);
 })();

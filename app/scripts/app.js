@@ -9,7 +9,6 @@ Web: http://www.pauloandrade1.com
 
 angular
 	.module('app', [
-		'facebook',
 		'ngResource',
 		'ngRoute'
 	]);

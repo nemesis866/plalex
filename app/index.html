@@ -2,11 +2,13 @@
 <html lang="es" ng-app="app">
 <head>
 	<meta charset="UTF-8">
-	<title>Plalex - Plataforma de cursos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Plalex - Plataforma de cursos</title>
 	<!-- bower:css -->
 	<!-- endbower -->
 	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/iconos.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<!-- endinject -->
 
 	<meta name="author" content="Paulo.Andrade.1">
@@ -16,15 +18,26 @@
 	<base href="/">
 </head>
 <body>
-
 	<div ng-view></div>
+
+	<div id='intro'>
+		<div class="loader loader-white"></div>
+		<div id="intro_text"><p>Please wait</p><p><span>Loading workspace</span></p></div>
+	</div>
 
 	<div class="success"></div>
 	<div class="error"></div>
 
 	<!-- bower:js -->
+	<script src="vendor/jquery/dist/jquery.js"></script>
+	<script src="vendor/angular/angular.js"></script>
+	<script src="vendor/angular-route/angular-route.js"></script>
+	<script src="vendor/angular-resource/angular-resource.js"></script>
+	<script src="vendor/angular-facebook/lib/angular-facebook.js"></script>
+	<script src="vendor/xdLocalStorage/dist/scripts/ng-xdLocalStorage.min.js"></script>
 	<!-- endbower -->
 	<!-- inject:js -->
+	<script src="/js/build.js"></script>
 	<!-- endinject -->
 </body>
 </html>

@@ -1,1 +1,30 @@
-<h1>PLALEX</h1>
+<header>
+  <img src="/img/logo_opt.png" alt="PLALEX" title="Plalex"/>
+  <h1>PLALEX</h1>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" title="Te sirvio la plataforma!, puedes comprarnos un caffe :)">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="T46F9NWENQ86A">
+		<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+		<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+	</form>
+</header>
+<section class="wrapper">
+  <article id="page-1">
+    <div ng-include="vm.showTemplate"></div>
+  </article>
+  <aside id="menu-1">
+    <div id="menu_principal">
+			<div id="menu-labels" class="labels">
+				<ul>
+					<li title="Documentacion" class="items actived" data-type="1" ng-click="vm.dis.menuRouter(1)"><span class="icon-doc"></span></li><!--
+					--><li title="Discusiones" class="items" data-type="2" ng-click="vm.dis.menuRouter(2)"><span class="icon-foro"></span></li><!--
+					--><li title="Notas" class="items" data-type="3" ng-click="vm.dis.menuRouter(3)"><span class="icon-notas"></span></li><!--
+					--><li title="Usuarios" class="items" data-type="4" ng-click="vm.dis.menuRouter(4)"><span class="icon-user"></span></li>
+				</ul>
+			</div>
+			<div id="menu_content">
+        <div ng-include="vm.navTemplate"></div>
+			</div>
+		</div>
+  </aside>
+</section>

@@ -25,6 +25,7 @@
     "angular-route": "~1.4.8",
     "angular-resource": "~1.4.8",
     "jquery": "~2.1.4",
-    "angular-facebook": "~0.2.3"
+    "angular-facebook": "~0.2.3",
+    "xdLocalStorage": "~2.0.1"
   }
 }

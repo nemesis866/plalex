@@ -1,7 +1,7 @@
 /************************************************
 Hoja de estilos principal
 
-Proyecto: Codeando.org
+Proyecto: plalex.com
 Author: Paulo Andrade
 Email: source.compu@gmail.com
 Web: http://www.pauloandrade1.com
@@ -51,14 +51,6 @@ html
 	box-sizing: border-box;
 }
 
-#wrapper
-{
-	background-color: #fcfcfc;
-	margin: 0 auto;
-	max-width: 1100px;
-	padding: 20px 10px;
-	position: relative;
-}
 .block
 {
 	display: block !important;
@@ -127,12 +119,418 @@ html
 }
 
 /*********************************************************
-Configuracion header y nav
+Configuracion página introducción
 *********************************************************/
 
+#intro
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: 9999;
+	text-align: center;
+	height: 100%;
+  transition: all 0.75s ease;
+}
+#intro img
+{
+	margin-top: 200px;
+	border: 0;
+}
+#intro_text
+{
+	color: #fff;
+	font-size: 1em;
+	margin-top: 10px;
+}
+#intro_text span
+{
+	color: #fff;
+	font-size: 1.5em;
+}
+
 /*********************************************************
-Configuracion Footer
+Configuracion Acomodo de divs
 *********************************************************/
+
+#page-1
+{
+  background-color: #fcfcfc;
+  display: inline-block;
+  font-size: 16px;
+  overflow-y: auto;
+  vertical-align: top;
+  width: 60%;
+}
+
+.wrapper
+{
+	background-color: #fcfcfc;
+  width: 100%;
+  font-size: 0;
+}
+
+/*********************************************************
+Configuracion nav
+*********************************************************/
+
+#menu-1
+{
+  background-color: #E8E8E8;
+  display: inline-block;
+  font-size: 16px;
+  overflow-y: auto;
+  vertical-align: top;
+  width: 40%;
+}
+
+#menu-1 #menu_content
+{
+	background-color: #fcfcfc;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin-top: 5px;
+	padding: 5px;
+	overflow-y: auto;
+}
+#menu-1 #menu_principal
+{
+	background: #E8E8E8;
+	color: #222;
+	padding: 5px;
+	transition-duration: .25s;
+}
+#menu-1 #menu_principal .labels
+{
+	background-color: #fcfcfc;
+  border-radius: 3px;
+	width: 100%;
+}
+#menu-1 #menu_principal .labels ul
+{
+  border-radius: 3px;
+  border: 1px solid #ddd;
+	font-size: 0;
+}
+#menu-1 #menu_principal .labels li
+{
+	font-size: 16px;
+	width: 25%;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 5px;
+  padding-bottom: 2px;
+	border-bottom: 3px solid #fcfcfc;
+  transition: all 0.25s ease;
+}
+#menu-1 #menu_principal .labels li:hover
+{
+	background: #FFD350;
+	border-bottom: 3px solid #eec240;
+	cursor: pointer;
+}
+#menu-1 #menu_principal .labels li:first-child
+{
+	border-bottom-left-radius: 3px;
+}
+#menu-1 #menu_principal .labels li:last-child
+{
+	border-bottom-right-radius: 3px;
+}
+#menu-1 #menu_principal .labels .actived
+{
+  background: #FFD350;
+  border-bottom: 3px solid #eec240;
+  cursor: pointer;
+}
+.menu_router
+{
+	background-color: #FFD350;
+	border-bottom: 3px solid #eec240 !important;
+}
+
+/*********************************************************
+Configuración formulario toolbox
+*********************************************************/
+
+#form_discusion
+{
+  background-color: #0078A9;
+	border-bottom: 5px solid #3e6299;
+	border-radius: 3px;
+	padding: 5px;
+}
+#form_discusion input
+{
+	display: none;
+	border: 1px solid #000;
+	font-size: 16px;
+	padding: 5px 0;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+#form_discusion input:focus
+{
+	background: #eee;
+}
+#form_discusion textarea
+{
+	border: 1px solid #000;
+	font-size: 16px;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	height: 25px;
+	min-height: 25px;
+	max-height: 300px;
+	transition: all 0.5s ease-in-out;
+  background-color: #eee;
+	background-image: url(/img/dis.png);
+	background-repeat: repeat;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+#resp_toolbox
+{
+	background: #eee;
+	border: 1px solid #E8E8E8;
+	border-bottom: 3px solid #E8E8E8;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	display: none;
+	margin-bottom: 5px;
+	padding: 10px 0;
+	width: 100%;
+}
+#resp_toolbox span
+{
+	background: #E8E8E8;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	padding: 5px 10px;
+	transition: all 0.5s ease-in-out;
+}
+#resp_toolbox span:hover
+{
+	background: #bbb;
+	border: 1px solid #222;
+	cursor: pointer;
+}
+#resp_toolbox span:first-child
+{
+	margin-left: 5px;
+}
+#resp_toolbox .minimizar
+{
+  font-weight: bold;
+  float: right;
+  margin-top: -4px;
+  margin-right: 5px;
+}
+#content_dis_cargando, #content_dis_edit_cargando
+{
+	text-align: center;
+}
+#content_dis_files, #content_dis_edit_files
+{
+	background-color: #Ff8124;
+	border-radius: 3px;
+	border: 1px solid #Ff8124;
+	border-bottom: 3px solid #ee7013;
+	color: #fff;
+	display: none;
+	margin-top: 5px;
+	padding: 5px 0;
+	text-align: center;
+}
+#content_dis_files:hover, #content_dis_edit_files:hover
+{
+	opacity: 0.8;
+	cursor: copy;
+}
+#content_dis_results, #content_dis_edit_results
+{
+	margin-top: 5px;
+}
+.submit
+{
+	border: 1px solid #eec240;
+	border-bottom: 3px solid #eec240;
+  border-radius: 3px;
+	display: none;
+	padding: 5px 10px;
+	background-color: #FFD350;
+}
+.submit:active
+{
+	background-color: #999;
+	color: #fff;
+}
+.submit:hover
+{
+	cursor: pointer;
+	background-color: #fff572;
+	border-bottom: 3px solid #eee461;
+}
+
+/*********************************************************
+Configuracion header
+*********************************************************/
+
+header
+{
+  background-color: #0078a9;
+  color: #fcfcfc;
+  padding: 5px 10px;
+  height: 30px;
+  vertical-align: middle;
+}
+header form
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+header img
+{
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.6em;
+  height: 1.3em;
+  padding-right: 5px;
+}
+header h1
+{
+  display: inline-block;
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+/*********************************************************
+Configuración imagen de carga
+*********************************************************/
+
+.loader
+{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.loader-blue
+{
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #176DEE;
+  border-bottom-color: #176DEE;
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+.loader-blue:after
+{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 50px;
+    border: 6px solid transparent;
+    border-top-color: #176DEE;
+    border-bottom-color: #176DEE;
+    opacity: 0.6;
+    -webkit-animation: spinreverse 2s linear infinite;
+    -moz-animation: spinreverse 2s linear infinite;
+    animation: spinreverse 2s linear infinite;
+}
+.loader-white
+{
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #FFF;
+  border-bottom-color: #FFF;
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+.loader-white:after
+{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 50px;
+    border: 6px solid transparent;
+    border-top-color: #FFF;
+    border-bottom-color: #FFF;
+    opacity: 0.6;
+    -webkit-animation: spinreverse 2s linear infinite;
+    -moz-animation: spinreverse 2s linear infinite;
+    animation: spinreverse 2s linear infinite;
+}
+
+/* Animations */
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(360deg); } }
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes spinreverse {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(-360deg); } }
+@-moz-keyframes spinreverse {
+  from {
+    -moz-transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(-360deg); } }
+@keyframes spinreverse {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
 
 /*********************************************************
 Configuracion resaltador de sintaxis
@@ -141,7 +539,7 @@ Configuracion resaltador de sintaxis
 .code
 {
 	background: #272822;
-	color: #ccc;
+	color: #ddd;
 	padding: 5px 10px;
 	border-radius: 3px;
 	overflow-x: auto;
@@ -197,6 +595,68 @@ Configuracion resaltador de sintaxis
 .typ
 {
 	color: #66D9EF !important;
+}
+
+/*********************************************************
+Configuracion de plantillas
+*********************************************************/
+
+/* TEMPLATE CHAPTER */
+
+#chapter
+{
+  background-color: #1091cb;
+  color: #fcfcfc;
+  padding: 20px 10px;
+}
+#chapter h1
+{
+  font-size: 1.3em;
+}
+#chapter h2
+{
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+/* TEMPLATE DISCUTION */
+
+#discusion_controls
+{
+	margin-top: 5px;
+	font-size: 0;
+}
+#discusion_controls .actived
+{
+  background-color: #3E6299;
+}
+#discusion_controls li
+{
+	background-color: #0078A9;
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: top;
+	width: 25%;
+	padding: 5px 0;
+	border-bottom: 5px solid #3E6299;
+  transition: all 0.25s ease;
+}
+#discusion_controls li:hover
+{
+	cursor: pointer;
+	background-color: #3E6299;
+}
+#discusion_controls li:first-child
+{
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+#discusion_controls li:last-child
+{
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
 /****************************************************************

@@ -1,0 +1,31 @@
+<div id="menu-foro" ng-controller="discutionController as vm">
+  <form id="form_discusion">
+    <div id="resp_toolbox">
+      <span ng-click="vm.dis.toolBox(1, 'content_dis')" class="icon-code" title="Insertar código">CODE</span>
+      <span ng-click="vm.dis.toolBox(2, 'content_dis')" class="icon-bold" title="Negrita"><strong></strong></span>
+      <span ng-click="vm.dis.toolBox(3, 'content_dis')" class="icon-italic" title="Cursiva"><i></i></span>
+      <span ng-click="vm.dis.toolBox(4, 'content_dis')" class="icon-underline" title="Subrayado"><u></u></span>
+      <span ng-click="vm.dis.toolBox(5, 'content_dis')" class="icon-strike" title="Tachado"></span>
+      <span ng-click="vm.dis.minimizar()" class="minimizar" title="Minimizar">-</span>
+    </div>
+    <textarea id="content_dis" placeholder="Tiene alguna duda o aporte? publiquelo aqui" ng-click="vm.dis.mostrarDiscusion()"></textarea>
+    <input type="text" id="link" placeholder="http://">
+    <div id="content_dis_files">Arrastre aqui sus archivos<br>(Tamaño maximo 10 Kb.)</div>
+    <div id="content_dis_results"></div>
+    <div id="content_dis_cargando"></div>
+    <p>
+      <button id="submit" class="submit" ng-click="dis_publicar()">Publicar</button>
+      <button class="submit" ng-click="dis_enlace()">Link</button>
+      <span id="form_info"></span>
+    </p>
+  </form>
+  <div>
+		<ul id='discusion_controls'>
+			<li class="controls actived" data-type="1" ng-click="vm.dis.menuDiscusion(1)">Nuevas</li><!--
+			--><li class="controls" data-type="2" ng-click="vm.dis.menuDiscusion(2)">Populares</li><!--
+			--><li class="controls" data-type="3" ng-click="vm.dis.menuDiscusion(3)">No respondidas</li><!--
+			--><li class="controls" data-type="4" ng-click="vm.dis.menuDiscusion(4)">Propias</li>
+		</ul>
+	</div>
+  <div ng-include="vm.navDisTemplate"></div>
+</div>
