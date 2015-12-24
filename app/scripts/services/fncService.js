@@ -100,6 +100,26 @@ Web: http://www.pauloandrade1.com
 			}, 3000);
 		};
 
+		// Utilizamos el selector css transform
+		this.transform = function (elem, selector, time)
+		{
+			// Verificamos si el elemento es un objeto
+			if(elem === 'object'){
+				// Recorremos el objeto
+				for(var i = 0; i  < elem.length; i++){
+					// Aplicamos los estilos
+					elem[i].style.transition = 'all ' + time + 's ease-in-out';
+					elem[i].style.transform = selector;
+					elem[i].style.webkitTransform = selector;
+				}
+			} else {
+				// Aplicamos los estilos
+				elem.style.transition = 'all ' + time + 's ease-in-out';
+				elem.style.transform = selector;
+				elem.style.webkitTransform = selector;
+			}
+		};
+
 		// Funcion para fijar el cursor del textarea
 		this.setCursorPosition = function (element, pos)
 		{

@@ -10,7 +10,7 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function MainController($routeParams, $scope, apiService, courseService, discusionService, displayDivService, storageFactory)
+	function MainController($routeParams, $scope, apiService, courseService, discusionService, displayDivService, fncService, storageFactory)
 	{
 		var vm = this;
 
@@ -21,16 +21,24 @@ Web: http://www.pauloandrade1.com
 		// Mostramos plantilla por defecto
 		vm.showTemplate = 'views/chapter.html';
 
-		// Obtenemos los parametros y redirigimos (Pruebas)
-		storageFactory.idCurso = $routeParams.idCurso || 1;
-		storageFactory.idUser = $routeParams.idUser || 3;
-
 		// Obtenemos los datos desde la API
 		apiService.load({
 			idCurso: storageFactory.idCurso,
 			idUser: storageFactory.idUser
 		});
 
+		// Ocultamos una discusión
+		this.closeDis = function ()
+		{
+			// Ocultamos el div menu-2
+			var elem = document.getElementById('menu-2');
+			fncService.transform(elem, 'translateX(100%)', 0.3);
+
+			// Limpiamos el div
+			document.getElementById('menu-1-content').innerHTML = '';
+		};
+
+		// Cambiamos el template del menu principal
 		vm.changeNavTemplate = function ()
 		{
 			vm.navTemplate = storageFactory.navTemplate;
@@ -47,10 +55,10 @@ Web: http://www.pauloandrade1.com
 
 		// Metodos para el sistema de discusiones
 		vm.dis = {
-			menuRouter: discusionService.menuRouter,
-			minimizar: discusionService.minimizar,
-			mostrarDiscusion: discusionService.mostrarDiscusion,
-			toolBox: discusionService.toolBox
+			menuRouter: discusionService.menuRouter, // Router para las discusiones
+			minimizar: discusionService.minimizar, // Minimizamos textarea de las discusiones
+			mostrarDiscusion: discusionService.mostrarDiscusion, // Mostramos una discusion
+			toolBox: discusionService.toolBox // Opciones del toolbox
 		};
 
 		// Ponemos tareas en escucha
@@ -67,6 +75,7 @@ Web: http://www.pauloandrade1.com
 				'courseService',
 				'discusionService',
 				'displayDivService',
+				'fncService',
 				'storageFactory',
 				MainController
 			]);

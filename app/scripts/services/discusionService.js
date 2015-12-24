@@ -63,34 +63,34 @@ Web: http://www.pauloandrade1.com
 
       // Acciones a tomar cuando no ingresemos en la ruta de discusiones
       if(id !== 2){
-        // Obtenemos el contenido del textarea de discusiones
+        // Verificamos si estabamos en el template discusiones
         if(document.getElementById('content_dis')){
+					// Verifificamos si el textarea de discusiones esta activado
           if($rootScope.controlForm === 1){
+						// Obtenemos el contenido del textarea de discusiones
             storageFactory.cacheDiscusion = document.getElementById('content_dis').value;
           }
 
           // Si no hay datos reseteamos el control del formulario
           $rootScope.controlForm = 0;
-          if(storageFactory.cacheDiscusion.length === 0){
-          } else {
-            // Mostramos mensaje
-            fncService.success('Su discusión se almaceno en la cache, para su publicación');
-          }
-        }
-      } else {
-        // Mostramos la plantilla por defecto
-        storageFactory.navDisTemplate = 'views/dis_nuevas.html';
-      }
 
-      // Cambiamos el template segun la ruta
-			if(id === 1){
-				storageFactory.navTemplate = 'views/documentation.html';
-			} else if(id === 2){
+					// Si la discusión se almaceno en el storage mostramos mensajes
+          if(storageFactory.cacheDiscusion.length !== 0){
+						fncService.success('Su discusión se almaceno en la cache, para su publicación');
+          }
+	      }
+
+				// Cambiamos el template segun la ruta
+				if(id === 1){
+					storageFactory.navTemplate = 'views/documentation.html';
+				} else if(id === 3){
+					storageFactory.navTemplate = 'views/note.html';
+				} else if(id === 4){
+					storageFactory.navTemplate = 'views/search.html';
+				}
+			} else {
+				// Mostramos la plantilla de discusiones
 				storageFactory.navTemplate = 'views/discution.html';
-			} else if(id === 3){
-				storageFactory.navTemplate = 'views/note.html';
-			} else if(id === 4){
-				storageFactory.navTemplate = 'views/search.html';
 			}
 		};
 
@@ -190,6 +190,14 @@ Web: http://www.pauloandrade1.com
         */
       }
     }
+
+		// Mostramos una discusión
+		this.viewDis = function (idDis)
+		{
+			// Mostramos el div menu-2
+			var elem = document.getElementById('menu-2');
+			fncService.transform(elem, 'translateX(0)', 0.3);
+		};
 	}
 
 	angular

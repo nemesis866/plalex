@@ -10,38 +10,72 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function ApiService (courseResource, userResource, storageFactory)
+	function ApiService (courseResource, discutionResource, userResource, storageFactory)
 	{
 		  this.load = function (data)
       {
-        // Cargamos los datos del curso
+        // Cargamos los datos del curso y despues disparamos el callback loadUSer
         courseResource.query({
           id: data.idCurso
-        }, loadAutor, error);
-      };
-
-      function loadAutor (data)
-      {
-        // ALmacenamos la informacion del curso en storage
-        storageFactory.course = data[0];
-        // Solicitamos la información del autor
-        userResource.query({
-          id: storageFactory.course.autor
         }, loadUser, error);
-      }
+      };
 
       function loadDiscution (data)
       {
         // ALmacenamos la informacion del usuario en storage
         storageFactory.user = data[0];
+
+				// Solicitamos información sobre las discusiones
+				// Nuevas
+				discutionResource.query({
+					idCurso: storageFactory.idCurso,
+					idUser: storageFactory.idUser,
+					start: 0,
+					type: 'nuevas'
+				}, function (data){
+					// ALmacenamos la informacion de las discusiones en storage
+	        storageFactory.disNuevas = data;
+				}, error);
+				// Populares
+				discutionResource.query({
+					idCurso: storageFactory.idCurso,
+					idUser: storageFactory.idUser,
+					start: 0,
+					type: 'populares'
+				}, function (data){
+					// ALmacenamos la informacion de las discusiones en storage
+	        storageFactory.disPopulares = data;
+				}, error);
+				// No respondidas
+				discutionResource.query({
+					idCurso: storageFactory.idCurso,
+					idUser: storageFactory.idUser,
+					start: 0,
+					type: 'no'
+				}, function (data){
+					// ALmacenamos la informacion de las discusiones en storage
+	        storageFactory.disNo = data;
+				}, error);
+				// Propias
+				discutionResource.query({
+					idCurso: storageFactory.idCurso,
+					idUser: storageFactory.idUser,
+					start: 0,
+					type: 'propias'
+				}, function (data){
+					// ALmacenamos la informacion de las discusiones en storage
+	        storageFactory.disPropias = data;
+				}, error);
+
         // Ocultamos la pantalla de intro
         hideIntro();
       }
 
       function loadUser (data)
       {
-        // ALmacenamos la informacion del autor en storage
-        storageFactory.author = data[0];
+				// ALmacenamos la información del curso en storage
+        storageFactory.course = data[0];
+
         // Solicitamos información del usuario
         userResource.query({
           id: storageFactory.idUser
@@ -75,6 +109,7 @@ Web: http://www.pauloandrade1.com
 		.module('app')
 			.service('apiService', [
         'courseResource',
+				'discutionResource',
         'userResource',
         'storageFactory',
 				ApiService

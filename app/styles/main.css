@@ -51,6 +51,20 @@ html
 	box-sizing: border-box;
 }
 
+.back
+{
+  background-color: #1091cb;
+  border-bottom: 3px solid #0070a9;
+  color: #fcfcfc;
+  padding: 10px 0;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.back:hover
+{
+  background-color: #0070a9;
+  cursor: pointer;
+}
 .block
 {
 	display: block !important;
@@ -165,6 +179,15 @@ Configuracion Acomodo de divs
   vertical-align: top;
   width: 60%;
 }
+#page-2
+{
+  top: 40px;
+  position: fixed;
+  width: 60%;
+  background-color: #fcfcfc;
+  translate: all 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
 
 .wrapper
 {
@@ -246,6 +269,22 @@ Configuracion nav
   background: #FFD350;
   border-bottom: 3px solid #eec240;
   cursor: pointer;
+}
+#menu-2
+{
+  border-left: 1px solid #ddd;
+  top: 40px;
+  left: 60%;
+  position: fixed;
+  z-index: 2;
+  width: 40%;
+  background-color: #fcfcfc;
+  translate: all 0.5s ease-in-out;
+  transform: translateX(100%);
+}
+#menu-2 .content
+{
+  padding: 5px;
 }
 .menu_router
 {
@@ -377,6 +416,72 @@ Configuración formulario toolbox
 	cursor: pointer;
 	background-color: #fff572;
 	border-bottom: 3px solid #eee461;
+}
+
+/*********************************************************
+Configuracion discusiones
+*********************************************************/
+
+.discusion
+{
+	border: 1px solid #ddd;
+	border-bottom: 5px solid #ddd;
+	border-radius: 3px;
+	padding: 5px 0;
+	width: 99%;
+	margin-top: 5px;
+	background: #eee;
+	transition: all 0.25s ease-in-out;
+}
+.discusion:hover
+{
+	box-shadow: 0 0 3px #000;
+	cursor: pointer;
+}
+.discusion img
+{
+	width: 16px;
+	border: 0;
+	margin-right: 5px;
+}
+.discusion p
+{
+	margin: 5px;
+}
+.discusion span
+{
+	float: right;
+}
+.discusion .d_content
+{
+	border: 1px solid #555;
+	padding: 5px;
+	margin: 0 5px;
+	background: #fff;
+	cursor: text;
+}
+.discusion .d_footer
+{
+	color: #000;
+}
+.discusion .d_title
+{
+	color: #000;
+	font-weight: bold;
+	font-size: 18px;
+}
+.discusion .d_subtitle
+{
+	color: #000;
+}
+.discusion .d_subtitle #d_user
+{
+	float: none;
+	transition: all 0.25s ease;
+}
+.discusion .d_subtitle #d_user:hover
+{
+	color: #999;
 }
 
 /*********************************************************

@@ -17,7 +17,7 @@ Web: http://www.pauloandrade1.com
     // Asignamos las variables
     vm.asign = function ()
     {
-      vm.authorName = storageFactory.author.nombre;
+      vm.authorName = storageFactory.course.nombre;
       vm.subtitulo = storageFactory.course.subtitulo;
       vm.titulo = storageFactory.course.titulo;
 

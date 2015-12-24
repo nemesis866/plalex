@@ -1,1 +1,15 @@
-nuevas
+<div ng-controller="disNuevaController as vm">
+  <div ng-repeat="dis in vm.discution" class="discusion dis_{{ dis.id_discucion }}" ng-click="vm.dis.viewDis(dis.id_discucion)">
+   <p class="d_title">{{ dis.titulo }}</p>
+    <p class="d_subtitle">
+			<img src="{{ dis.fbid | img:dis.avatar }}"> {{ dis.nombre }}:
+			<span>{{ dis.fecha | year }}</span>
+		</p>
+		<div class="d_content">
+      {{ dis.contenido | substr:100 }}
+    </div>
+		<p class="d_footer">Votos: <span class="dis_voto_{{ dis.id_discucion }}" style="float:none">
+      {{ dis.votos }}</span> <span class="dis_res_{{ dis.id_discucion }}">Respuestas: {{ dis.respuestas }}</span>
+    </p>
+	</div>
+</div>

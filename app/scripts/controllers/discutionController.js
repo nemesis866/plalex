@@ -16,12 +16,11 @@ Web: http://www.pauloandrade1.com
 
 		// Metodos para el sistema de discusiones
 		vm.dis = {
-      menuDiscusion: discusionService.menuDiscusion,
-      // Router para el menu de discusiones
-			menuRouter: discusionService.menuRouter,
-			minimizar: discusionService.minimizar,
-			mostrarDiscusion: discusionService.mostrarDiscusion,
-			toolBox: discusionService.toolBox
+      menuDiscusion: discusionService.menuDiscusion, // Router para el menu de discusión
+			menuRouter: discusionService.menuRouter, // Router para el menu de discusiones
+			minimizar: discusionService.minimizar, // Minimizamos el textarea de las discusiones
+			mostrarDiscusion: discusionService.mostrarDiscusion, // Mostramos el textarea para crear discusiones
+			toolBox: discusionService.toolBox, // Acciones para los botones del toolbox
 		};
 
     // Cambios el template
